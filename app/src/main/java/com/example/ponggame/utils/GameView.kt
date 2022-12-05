@@ -71,21 +71,21 @@ class GameView(context: Context) : SurfaceView(context), SurfaceHolder.Callback,
 
     }
 
-    fun intersects(b1: Ball, b2: Ball) {
-//        if (Math.sqrt(
-//                Math.pow(b1.posX - b2.posX.toDouble(), 2.0)
-//                        + Math.pow(b1.posY - b2.posY.toDouble(), 2.0)
-//            ) <= b1.size + b2.size
-//        ) {
-//            bounceBall(b1, b2)
-//            score ++
-//            pActivity.updateText("Score: $score")
-//        }
+    fun intersects(b1: Ball) {
+        if (Math.sqrt(
+                Math.pow(b1.posX.toDouble(), 2.0)
+                        + Math.pow(b1.posY - b1.posY.toDouble(), 2.0)
+            ) <= b1.size
+        ) {
+            bounceBall(b1)
+            score ++
+            pActivity.updateText("Score: $score")
+        }
     }
 
-    fun bounceBall(b1: Ball, b2: Ball) {
+    fun bounceBall(b1: Ball) {
         b1.speedY *= -1
-        b2.speedX = 0f
+        //b2.speedX = 0f
         ball1.paint.color = Color.YELLOW
 
     }
@@ -111,19 +111,18 @@ class GameView(context: Context) : SurfaceView(context), SurfaceHolder.Callback,
                 deltaTime = currentTimeMillis() - timeToUpdate
                 timeToUpdate += 1000 / frameRate
 
-                val speedAdjustment = 1f + deltaTime * frameRate/1000
+                val speedAdjustment = 1f + deltaTime * frameRate / 1000
 
 
                 update(speedAdjustment)
                 draw()
-                intersects(ball1, ball2)
+                intersects(ball1)
                 ball1.checkBounds(bounds)
             }
 
         }
 
     }
-    }
-
-
 }
+
+

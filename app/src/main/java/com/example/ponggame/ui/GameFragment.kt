@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.ponggame.utils.GameView
 
-class GameFragment: Fragment() {
+class GameFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -15,7 +15,7 @@ class GameFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return GameView(activity as MainActivity)
+        return GameView(activity as PongActivity)
     }
 
 

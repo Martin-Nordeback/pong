@@ -8,7 +8,7 @@ import com.example.ponggame.databinding.ActivityMainBinding
 
 class PongActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,4 +20,11 @@ class PongActivity : AppCompatActivity() {
         }
 
     }
+
+    fun updateText(str: String) {
+        runOnUiThread(Runnable {
+            binding.textView.text = str
+        })
+    }
+
 }
