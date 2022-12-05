@@ -9,6 +9,7 @@ class Ball (context: Context, var posX: Float, var posY: Float, var size: Float,
 
     val paint = Paint()
 
+    // L
 
     fun update(){
         posY += speedY
