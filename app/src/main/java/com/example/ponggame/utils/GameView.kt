@@ -41,6 +41,10 @@ class GameView(context: Context) : SurfaceView(context), SurfaceHolder.Callback,
     fun setup() {
         ball1 = Ball(this.context, 100f, 100f, 50f, 7f, 5f)
         ball1.paint.color = Color.WHITE
+        ball1.posX = 100f
+        ball1.posY = 100f
+
+
 
     }
 
@@ -94,7 +98,11 @@ class GameView(context: Context) : SurfaceView(context), SurfaceHolder.Callback,
     override fun surfaceCreated(p0: SurfaceHolder) {
     }
 
-    override fun surfaceChanged(p0: SurfaceHolder, p1: Int, p2: Int, p3: Int) {
+    override fun surfaceChanged(p0: SurfaceHolder, format: Int, width: Int, height: Int) {
+
+        bounds = Rect(0,0, width, height)
+
+        start()
     }
 
     override fun surfaceDestroyed(p0: SurfaceHolder) {
@@ -102,7 +110,12 @@ class GameView(context: Context) : SurfaceView(context), SurfaceHolder.Callback,
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
-        return super.onTouchEvent(event)
+
+
+        // Om man ska kunna röra bollen med on touch, Filip
+        /*ball1.posX = event!!.x
+        ball1.posY = event!!.y*/
+        return true
     }
 
     override fun run() {
