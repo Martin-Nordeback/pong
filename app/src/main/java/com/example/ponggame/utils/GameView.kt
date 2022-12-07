@@ -13,7 +13,11 @@ import java.lang.System.currentTimeMillis
 import kotlin.concurrent.thread
 
 class GameView(context: Context) : SurfaceView(context), SurfaceHolder.Callback, Runnable {
+
 //1
+
+//martins gren
+
     private var score = 0
     private var thread: Thread? = null
     private var running = false
@@ -41,10 +45,6 @@ class GameView(context: Context) : SurfaceView(context), SurfaceHolder.Callback,
     fun setup() {
         ball1 = Ball(this.context, 100f, 100f, 50f, 7f, 5f)
         ball1.paint.color = Color.WHITE
-        ball1.posX = 100f
-        ball1.posY = 100f
-
-
 
     }
 
@@ -83,7 +83,7 @@ class GameView(context: Context) : SurfaceView(context), SurfaceHolder.Callback,
         ) {
             bounceBall(b1)
             score ++
-            pActivity.updateText("Score: $score")
+            //pActivity.updateText("Score: $score")
         }
     }
 
@@ -98,11 +98,7 @@ class GameView(context: Context) : SurfaceView(context), SurfaceHolder.Callback,
     override fun surfaceCreated(p0: SurfaceHolder) {
     }
 
-    override fun surfaceChanged(p0: SurfaceHolder, format: Int, width: Int, height: Int) {
-
-        bounds = Rect(0,0, width, height)
-
-        start()
+    override fun surfaceChanged(p0: SurfaceHolder, p1: Int, p2: Int, p3: Int) {
     }
 
     override fun surfaceDestroyed(p0: SurfaceHolder) {
@@ -110,12 +106,7 @@ class GameView(context: Context) : SurfaceView(context), SurfaceHolder.Callback,
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
-
-
-        // Om man ska kunna röra bollen med on touch, Filip
-        /*ball1.posX = event!!.x
-        ball1.posY = event!!.y*/
-        return true
+        return super.onTouchEvent(event)
     }
 
     override fun run() {
