@@ -13,7 +13,11 @@ import java.lang.System.currentTimeMillis
 import kotlin.concurrent.thread
 
 class GameView(context: Context) : SurfaceView(context), SurfaceHolder.Callback, Runnable {
+
+//1
+
 //martins gren
+
     private var score = 0
     private var thread: Thread? = null
     private var running = false

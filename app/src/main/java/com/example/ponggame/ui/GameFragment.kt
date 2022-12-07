@@ -10,6 +10,16 @@ import com.example.ponggame.utils.GameView
 class GameFragment : Fragment() {
 
 
+//1
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        return GameView(activity as PongActivity)
+    }
+
+
 //    override fun onCreateView(
 //        inflater: LayoutInflater, container: ViewGroup?,
 //        savedInstanceState: Bundle?
@@ -17,6 +27,7 @@ class GameFragment : Fragment() {
 //        // Inflate the layout for this fragment
 //        return GameView(activity as PongActivity)
 //    }
+
 
 
 }

@@ -9,7 +9,12 @@ import com.example.ponggame.utils.GameView
 
 class PongActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityPongBinding
+//1
+    private lateinit var binding: ActivityMainBinding
+
+
+  
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

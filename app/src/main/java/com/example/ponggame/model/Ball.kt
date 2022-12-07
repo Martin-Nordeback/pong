@@ -21,7 +21,7 @@ class Ball(
 
 
 
-    // LH
+    // LH 1
 
     fun update(speedAdjustment: Float) {
         posY += speedY * speedAdjustment
