@@ -9,7 +9,7 @@ import com.example.ponggame.utils.GameView
 
 class GameFragment : Fragment() {
 
-
+//1
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

@@ -9,7 +9,7 @@ import android.graphics.RectF
 import android.view.WindowInsetsAnimation.Bounds
 
 class Player(private val screenSizeX: Int, private val screenSizeY: Int, onTop: Boolean) {
-
+//1
     val rect: RectF
 
     private val playerBarLength: Float = (screenSizeX / 6).toFloat()

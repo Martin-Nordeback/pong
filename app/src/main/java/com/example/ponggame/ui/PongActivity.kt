@@ -7,7 +7,7 @@ import com.example.ponggame.R
 import com.example.ponggame.databinding.ActivityMainBinding
 
 class PongActivity : AppCompatActivity() {
-
+//1
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
