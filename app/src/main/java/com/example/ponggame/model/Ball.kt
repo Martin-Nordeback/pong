@@ -43,6 +43,7 @@ class Ball(
         if (posY + size < bounds.bottom) {
             this.speedX *= -1
         }
+        //träffade den botten=?
     }
 
 }
